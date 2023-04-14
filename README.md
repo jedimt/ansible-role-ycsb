@@ -53,7 +53,8 @@ Example Playbook
         - { role: jedimt.ycsb,
             dbsize: 85689802,
             ycsb_load_threads: 8,
-            ycsb_run_threads: 12
+            ycsb_run_threads: 12,
+            ycsb_bindings: 'cassandra'
         }
 
 License
