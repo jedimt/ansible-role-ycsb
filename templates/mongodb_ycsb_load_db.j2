@@ -1,0 +1,14 @@
+#!/bin/bash
+# Example Invocation: nohup load_db.sh &
+
+# bindIP set to management IP of host
+# nohup ./bin/ycsb load mongodb \
+#    -p mongodb.url="mongodb://{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}:27017/ycsb" \
+#    -s -P ./workloads/workloada \
+#    -threads {{ ycsb_load_threads }} > load_db_result.txt &
+
+# bindIP set to default of localhost (127.0.0.1)
+nohup ./bin/ycsb load mongodb \
+    -p mongodb.url="mongodb://127.0.0.1:27017/ycsb" \
+    -s -P ./workloads/workloada \
+    -threads {{ ycsb_load_threads }} > load_db_result.txt &
